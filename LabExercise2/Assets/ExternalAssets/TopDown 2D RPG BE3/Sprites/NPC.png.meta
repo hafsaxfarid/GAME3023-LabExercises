@@ -155,85 +155,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Luna 0
+      name: NPC_0
       rect:
         serializedVersion: 2
         x: 0
         y: 51
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eddb976be9c1115e0800000000000000
-      internalID: -1940738496428130850
+      spriteID: fdfce9cf8bbf624408556ec2c742124e
+      internalID: 1934539103
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Luna 1
+      name: NPC_1
       rect:
         serializedVersion: 2
         x: 0
         y: 34
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 15
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0e653fdf27a9eaa0800000000000000
-      internalID: -6131185593638097393
+      spriteID: 19610e4068318ff4a985fc774830499a
+      internalID: 924239813
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ludo 0
+      name: NPC_2
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2
         y: 17
-        width: 16
+        width: 12
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c23020e048509640800000000000000
-      internalID: 5084661014962647745
+      spriteID: bbee26a37903aa244a967f90db72aa18
+      internalID: -543303359
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ludo 1
+      name: NPC_3
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2
         y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        width: 12
+        height: 15
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f45deb26be4c0cb0800000000000000
-      internalID: -4896452150530583312
+      spriteID: 98ce773c709fea54dbbca060a02404e2
+      internalID: -1538675583
       vertices: []
       indices: 
       edges: []
@@ -249,10 +249,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Ludo 1: -4896452150530583312
-      Ludo 0: 5084661014962647745
-      Luna 1: -6131185593638097393
-      Luna 0: -1940738496428130850
+      NPC_1: 924239813
+      NPC_2: -543303359
+      NPC_0: 1934539103
+      NPC_3: -1538675583
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
