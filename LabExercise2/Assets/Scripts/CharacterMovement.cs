@@ -5,8 +5,11 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     [SerializeField]
+    Rigidbody2D playerRB;
+
+    [SerializeField]
     [Range(0, 10)]
-    float moveSpeed = 1;
+    float moveSpeed = 3;
     
     void Start()
     {
@@ -18,8 +21,6 @@ public class CharacterMovement : MonoBehaviour
         float inputX = Input.GetAxisRaw("Horizontal");
         float inputY = Input.GetAxisRaw("Vertical");
 
-        Vector3 currentPosition = transform.position;
-
-        transform.position = currentPosition + new Vector3(inputX, inputY, 0) * moveSpeed * Time.deltaTime;
+        playerRB.velocity = new Vector3(inputX, inputY, 0) * moveSpeed;
     }
 }
