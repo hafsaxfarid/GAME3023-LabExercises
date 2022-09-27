@@ -10,12 +10,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField]
     [Range(0, 10)]
     float moveSpeed = 3;
-    
-    void Start()
-    {
-            
-    }
-    
+
     void Update()
     {
         float inputX = Input.GetAxisRaw("Horizontal");

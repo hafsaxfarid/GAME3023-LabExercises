@@ -5,12 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class PortalManager : MonoBehaviour
 {
+    [SerializeField]
+    private string portalExitSpawnName = "";
+
+    private Traveler traveler;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Traveler traveler = other.GetComponent<Traveler>();
+        traveler = other.GetComponent<Traveler>();
 
-        if(traveler != null)
+        if (traveler != null)
         {
+            traveler.LastPortalExitSpawnName = portalExitSpawnName;
             SceneManager.LoadScene(gameObject.tag, LoadSceneMode.Single);
         }
     }
