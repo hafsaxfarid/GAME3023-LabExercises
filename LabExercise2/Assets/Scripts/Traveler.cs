@@ -12,6 +12,9 @@ public class Traveler : MonoBehaviour
         set;
     } = ""; // sets to nothing by default 
 
+    [SerializeField]
+    public GameObject travelerLight;
+
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
@@ -30,6 +33,15 @@ public class Traveler : MonoBehaviour
                 if(exitPoint.name == LastPortalExitSpawnName)
                 {
                     transform.position = exitPoint.transform.position;
+                    
+                    if(exitPoint.name != "PortalExitFromTown")
+                    {
+                        travelerLight.SetActive(false);
+                    }
+                    else
+                    {
+                        travelerLight.SetActive(true);
+                    }
                 }
             }
         }
