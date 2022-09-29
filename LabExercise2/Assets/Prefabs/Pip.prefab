@@ -251,7 +251,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerRB: {fileID: 3510521448856395127}
   moveSpeed: 3
-  playerLight: {fileID: 635105011}
 --- !u!114 &6976640634305865695
 MonoBehaviour:
   m_ObjectHideFlags: 0
