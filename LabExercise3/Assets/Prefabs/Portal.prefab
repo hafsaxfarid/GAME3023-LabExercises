@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 1556923774, guid: 1d6139833cda72b49819b4d3d2de40c0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f404d4279654db4c819845d6f2f6462, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portalExitPrefab: {fileID: 4335363768176196611, guid: 03f80c89665059f4685f7be180470c98, type: 3}
+  portalExitSpawnName: 
 --- !u!61 &551630199
 BoxCollider2D:
   m_ObjectHideFlags: 0
