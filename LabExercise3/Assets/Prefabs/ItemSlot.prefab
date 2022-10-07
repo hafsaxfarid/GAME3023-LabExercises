@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 428001398}
   - component: {fileID: 428001397}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: ItemCountText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -257,10 +257,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1728648842}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 6623480155089336622}
+        m_TargetAssemblyTypeName: ItemSlot, Assembly-CSharp
+        m_MethodName: UseItemInSlot
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 5110042011970122618}
   - component: {fileID: 5110042011970122612}
   - component: {fileID: 5110042011970122613}
+  - component: {fileID: 6623480155089336622}
   m_Layer: 5
   m_Name: ItemSlot
   m_TagString: Untagged
@@ -346,3 +347,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &6623480155089336622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5110042011970122619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f263bc93e7cbf78408c43a5bf9cda5ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 0}
+  itemCount: 0
+  itemIcon: {fileID: 1728648844}
+  itemCountText: {fileID: 428001397}
