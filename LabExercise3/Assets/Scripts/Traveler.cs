@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class Traveler : MonoBehaviour
 {
-
     public string LastPortalExitSpawnName
     {
         get;
@@ -16,6 +15,9 @@ public class Traveler : MonoBehaviour
     [SerializeField]
     public GameObject travelerLight;
 
+    [SerializeField]
+    public GameObject playerHUD;
+
     private void Start()
     {
         DestroyIfNotOriginal();
@@ -23,9 +25,8 @@ public class Traveler : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         SceneManager.sceneLoaded += OnLoadSceneAction;
-
-        //OnDestroy();
     }
+    
     private void DestroyIfNotOriginal()
     {
         if(SpawnPoint.player != this)
@@ -34,30 +35,36 @@ public class Traveler : MonoBehaviour
         }
     }
 
-    private void OnDestroy()
-    {
-        SceneManager.sceneLoaded -= OnLoadSceneAction;
-    }
-    
     void OnLoadSceneAction(Scene scene, LoadSceneMode loadMode)
     {
-        if (LastPortalExitSpawnName != "")
+        if (SceneManager.GetActiveScene().name == "MainMenu")
         {
-            SpawnPoint[] exitSpawnPoints = GameObject.FindObjectsOfType<SpawnPoint>();
-
-            foreach(SpawnPoint exitPoint in exitSpawnPoints)
+            gameObject.SetActive(false);
+        }
+        else
+        {
+            gameObject.SetActive(true);
+            
+            if (LastPortalExitSpawnName != "")
             {
-                if(exitPoint.name == LastPortalExitSpawnName)
+                SpawnPoint[] exitSpawnPoints = GameObject.FindObjectsOfType<SpawnPoint>();
+
+                foreach (SpawnPoint exitPoint in exitSpawnPoints)
                 {
-                    transform.position = exitPoint.transform.position;
-                    
-                    if(exitPoint.name == "PortalExitFromTown")
+                    if (exitPoint.name == LastPortalExitSpawnName)
                     {
-                        travelerLight.SetActive(true);
-                    }
-                    else
-                    {
-                        travelerLight.SetActive(false);
+                        transform.position = exitPoint.transform.position;
+
+                        if (exitPoint.name == "PortalExitFromTown")
+                        {
+                            travelerLight.SetActive(true);
+                            playerHUD.SetActive(true);
+                        }
+                        else
+                        {
+                            travelerLight.SetActive(false);
+                            playerHUD.SetActive(true);
+                        }
                     }
                 }
             }
