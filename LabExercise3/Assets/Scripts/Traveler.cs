@@ -26,10 +26,15 @@ public class Traveler : MonoBehaviour
 
         SceneManager.sceneLoaded += OnLoadSceneAction;
     }
-    
+
+    private void Update()
+    {
+        DestroyIfNotOriginal();
+    }
+
     private void DestroyIfNotOriginal()
     {
-        if(SpawnPoint.player != this)
+        if (SpawnPoint.player != this || UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "MainMenu")
         {
             Destroy(gameObject);
         }
@@ -37,14 +42,8 @@ public class Traveler : MonoBehaviour
 
     void OnLoadSceneAction(Scene scene, LoadSceneMode loadMode)
     {
-        if (SceneManager.GetActiveScene().name == "MainMenu")
-        {
-            gameObject.SetActive(false);
-        }
-        else
-        {
-            gameObject.SetActive(true);
-            
+        //if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "MainMenu")
+        //{
             if (LastPortalExitSpawnName != "")
             {
                 SpawnPoint[] exitSpawnPoints = GameObject.FindObjectsOfType<SpawnPoint>();
@@ -68,6 +67,6 @@ public class Traveler : MonoBehaviour
                     }
                 }
             }
-        }
+        //}
     }
 }

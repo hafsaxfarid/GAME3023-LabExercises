@@ -19,8 +19,11 @@ public class SpawnPoint : MonoBehaviour
     {
         if (player == null && playerPrefab != null)
         {
-            GameObject newPlayer = Instantiate(playerPrefab, transform.position, Quaternion.identity);
-            player = newPlayer.GetComponent<Traveler>();
+            if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "MainMenu")
+            {
+                GameObject newPlayer = Instantiate(playerPrefab, transform.position, Quaternion.identity);
+                player = newPlayer.GetComponent<Traveler>();
+            }
 
             //if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 1)
             if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Overworld")
