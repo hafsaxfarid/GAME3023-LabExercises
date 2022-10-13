@@ -7,7 +7,13 @@ public class SpawnPoint : MonoBehaviour
     [SerializeField]
     GameObject playerPrefab;
 
-    private static Traveler player = null;
+    public static Traveler player = null;
+
+    //public static Traveler Player
+    //{
+    //    get;
+    //    private set;
+    //}
 
     void Start()
     {

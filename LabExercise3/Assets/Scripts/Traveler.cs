@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,9 +18,25 @@ public class Traveler : MonoBehaviour
 
     private void Start()
     {
+        DestroyIfNotOriginal();
+
         DontDestroyOnLoad(gameObject);
 
         SceneManager.sceneLoaded += OnLoadSceneAction;
+
+        //OnDestroy();
+    }
+    private void DestroyIfNotOriginal()
+    {
+        if(SpawnPoint.player != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnLoadSceneAction;
     }
     
     void OnLoadSceneAction(Scene scene, LoadSceneMode loadMode)
@@ -34,13 +51,13 @@ public class Traveler : MonoBehaviour
                 {
                     transform.position = exitPoint.transform.position;
                     
-                    if(exitPoint.name != "PortalExitFromTown")
+                    if(exitPoint.name == "PortalExitFromTown")
                     {
-                        travelerLight.SetActive(false);
+                        travelerLight.SetActive(true);
                     }
                     else
                     {
-                        travelerLight.SetActive(true);
+                        travelerLight.SetActive(false);
                     }
                 }
             }
