@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
+    [SerializeField]
+    GameObject playerHUD;
+
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
@@ -13,6 +16,7 @@ public class SceneController : MonoBehaviour
     public void NewGame()
     {
         SceneManager.LoadScene("Town");
+        playerHUD.SetActive(true);
         Time.timeScale = 1f;
         Debug.Log("New Game starting!");
     }
@@ -20,6 +24,7 @@ public class SceneController : MonoBehaviour
     public void ContinueGame()
     {
         SceneManager.LoadScene("Overworld");
+        playerHUD.SetActive(true);
         Time.timeScale = 1f;
         Debug.Log("Continuing game");
 
@@ -47,6 +52,8 @@ public class SceneController : MonoBehaviour
     public void MainMenu()
     {
         // figure out how to remove pip from scene when loading back to main menu
+
+        playerHUD.SetActive(false);
         SceneManager.LoadScene("MainMenu");
         Debug.Log("Main Menu loading...");
     }
