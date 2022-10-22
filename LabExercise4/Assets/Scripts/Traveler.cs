@@ -42,31 +42,28 @@ public class Traveler : MonoBehaviour
 
     void OnLoadSceneAction(Scene scene, LoadSceneMode loadMode)
     {
-        //if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "MainMenu")
-        //{
-            if (LastPortalExitSpawnName != "")
+        if (LastPortalExitSpawnName != "")
+        {
+            SpawnPoint[] exitSpawnPoints = GameObject.FindObjectsOfType<SpawnPoint>();
+
+            foreach (SpawnPoint exitPoint in exitSpawnPoints)
             {
-                SpawnPoint[] exitSpawnPoints = GameObject.FindObjectsOfType<SpawnPoint>();
-
-                foreach (SpawnPoint exitPoint in exitSpawnPoints)
+                if (exitPoint.name == LastPortalExitSpawnName)
                 {
-                    if (exitPoint.name == LastPortalExitSpawnName)
-                    {
-                        transform.position = exitPoint.transform.position;
+                    transform.position = exitPoint.transform.position;
 
-                        if (exitPoint.name == "PortalExitFromTown")
-                        {
-                            travelerLight.SetActive(true);
-                            playerHUD.SetActive(true);
-                        }
-                        else
-                        {
-                            travelerLight.SetActive(false);
-                            playerHUD.SetActive(true);
-                        }
+                    if (exitPoint.name == "PortalExitFromTown")
+                    {
+                        travelerLight.SetActive(true);
+                        playerHUD.SetActive(true);
+                    }
+                    else
+                    {
+                        travelerLight.SetActive(false);
+                        playerHUD.SetActive(true);
                     }
                 }
             }
-        //}
+        }
     }
 }

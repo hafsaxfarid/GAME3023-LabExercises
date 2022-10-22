@@ -5,27 +5,20 @@ using UnityEngine;
 public class SpawnPoint : MonoBehaviour
 {
     [SerializeField]
-    GameObject playerPrefab;
+    public GameObject playerPrefab;
 
     public static Traveler player = null;
 
-    //public static Traveler Player
-    //{
-    //    get;
-    //    private set;
-    //}
-
-    void Start()
+    private void Start()
     {
         if (player == null && playerPrefab != null)
         {
-            if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "MainMenu")
+            if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name != "MainMenu")
             {
                 GameObject newPlayer = Instantiate(playerPrefab, transform.position, Quaternion.identity);
                 player = newPlayer.GetComponent<Traveler>();
             }
 
-            //if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 1)
             if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Overworld")
             {
                 player.travelerLight.gameObject.SetActive(true);

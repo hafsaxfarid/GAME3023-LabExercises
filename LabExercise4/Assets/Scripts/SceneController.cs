@@ -5,14 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    private void Start()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
+    private static SceneController scInstance;
 
+    private void Awake()
+    {
+        if (scInstance == null)
+        {
+            scInstance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    
     public void NewGame()
     {
         SceneManager.LoadScene("Town");
+        GameSaveManager.gsmInstance.continueGame = false;
         Time.timeScale = 1f;
     }
 
@@ -20,7 +31,7 @@ public class SceneController : MonoBehaviour
     {
         //SceneManager.LoadScene("Overworld");
         Time.timeScale = 1f;
-
+    
         // load saved game
     }
 
@@ -42,6 +53,7 @@ public class SceneController : MonoBehaviour
 
     public void MainMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
 }

@@ -18,15 +18,30 @@ class SaveData
 }
 public class GameSaveManager : MonoBehaviour
 {
+    public static GameSaveManager gsmInstance;
+
+    private void Awake()
+    {
+        if (gsmInstance == null)
+        {
+            gsmInstance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    [SerializeField]
+    public GameObject playerPrefab;
+
     //public Transform player;
+
+    public bool continueGame = false;
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            SaveGame();
-        }
-
         if (Input.GetKeyDown(KeyCode.L))
         {
             LoadGame();
@@ -46,9 +61,12 @@ public class GameSaveManager : MonoBehaviour
         
         bf.Serialize(file, data);
         file.Close();
+        
         Debug.Log("Game data saved!");
-    }
-    
+
+        //Debug.Log("[ " + data.playerPositionX  + " " + data.playerPositionY + " " + data.playerPositionZ + " ]");                     
+    }                                           
+
     void LoadGame()
     {
         if (File.Exists(Application.persistentDataPath + "/MySaveData.dat"))
@@ -57,7 +75,7 @@ public class GameSaveManager : MonoBehaviour
             FileStream file = File.Open(Application.persistentDataPath + "/MySaveData.dat", FileMode.Open);
             SaveData data = (SaveData)bf.Deserialize(file);
             file.Close();
-            
+
             var loadSceneIndex = data.playerSceneIndex;
             var x = data.playerPositionX;
             var y = data.playerPositionY;
@@ -66,8 +84,19 @@ public class GameSaveManager : MonoBehaviour
             Time.timeScale = 1f;
 
             UnityEngine.SceneManagement.SceneManager.LoadScene(loadSceneIndex);
-            //player.gameObject.GetComponent<Traveler>();
+
+            GameObject newPlayer = Instantiate(playerPrefab, new Vector3(x, y, z), Quaternion.identity);
+            SpawnPoint.player = newPlayer.GetComponent<Traveler>();
             SpawnPoint.player.transform.position = new Vector3(x, y, z);
+
+            if (loadSceneIndex == 1)
+            {
+                SpawnPoint.player.travelerLight.gameObject.SetActive(false);
+            }
+            else
+            {
+                SpawnPoint.player.travelerLight.gameObject.SetActive(true);
+            }
 
             Debug.Log("Game data loaded!");
         }
@@ -79,11 +108,13 @@ public class GameSaveManager : MonoBehaviour
     
     public void SaveButtonPressed()
     {
+        Time.timeScale = 1f;
         SaveGame();
     }
 
     public void LoadButtonPressed()
     {
+        continueGame = true;
         LoadGame();
     }
 }
