@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    private Traveler player;
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
@@ -19,10 +18,10 @@ public class SceneController : MonoBehaviour
 
     public void ContinueGame()
     {
-        SceneManager.LoadScene("Overworld");
+        //SceneManager.LoadScene("Overworld");
         Time.timeScale = 1f;
 
-        // TO DO IN FUTURE: load saved game
+        // load saved game
     }
 
     public void Settings()
@@ -43,7 +42,6 @@ public class SceneController : MonoBehaviour
 
     public void MainMenu()
     {
-        // figure out how to remove pip from scene when loading back to main menu
         SceneManager.LoadScene("MainMenu");
     }
 }

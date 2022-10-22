@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6266172117610400610}
   - component: {fileID: 6266172117610400611}
+  - component: {fileID: 6266172116890640154}
   m_Layer: 0
   m_Name: SceneController
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6266172117610400611
 MonoBehaviour:
@@ -44,4 +45,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7c86a5ba8fe8074eb8daf91ce68de0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHUD: {fileID: 7220249426674427502, guid: 75fe576754219c34781fe5d0b06650d3, type: 3}
+--- !u!114 &6266172116890640154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6266172117610400609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20d39872eb6ab78419566fa3bb609038, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
