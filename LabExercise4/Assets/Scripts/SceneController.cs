@@ -22,9 +22,9 @@ public class SceneController : MonoBehaviour
     
     public void NewGame()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Town");
         GameSaveManager.gsmInstance.continueGame = false;
-        Time.timeScale = 1f;
     }
 
     public void ContinueGame()

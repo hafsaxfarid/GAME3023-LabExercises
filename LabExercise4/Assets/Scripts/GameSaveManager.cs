@@ -50,6 +50,8 @@ public class GameSaveManager : MonoBehaviour
 
     void SaveGame()
     {
+        Time.timeScale = 1f;
+
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(Application.persistentDataPath + "/MySaveData.dat");
         SaveData data = new SaveData();
@@ -71,6 +73,9 @@ public class GameSaveManager : MonoBehaviour
     {
         if (File.Exists(Application.persistentDataPath + "/MySaveData.dat"))
         {
+            
+            Time.timeScale = 1f;
+            
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/MySaveData.dat", FileMode.Open);
             SaveData data = (SaveData)bf.Deserialize(file);
@@ -80,8 +85,6 @@ public class GameSaveManager : MonoBehaviour
             var x = data.playerPositionX;
             var y = data.playerPositionY;
             var z = data.playerPositionZ;
-
-            Time.timeScale = 1f;
 
             UnityEngine.SceneManagement.SceneManager.LoadScene(loadSceneIndex);
 
