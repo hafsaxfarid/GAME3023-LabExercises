@@ -123,9 +123,9 @@ GameObject:
   - component: {fileID: 3510521448856395122}
   - component: {fileID: 3510521448856395126}
   - component: {fileID: 3510521448856395127}
-  - component: {fileID: 3510521448856395124}
-  - component: {fileID: 6976640634305865695}
   - component: {fileID: 2028348103422656277}
+  - component: {fileID: 6976640634305865695}
+  - component: {fileID: 3510521448856395124}
   m_Layer: 6
   m_Name: Pip
   m_TagString: Player
@@ -142,7 +142,7 @@ Transform:
   m_GameObject: {fileID: 3510521448856395123}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.9359915, y: 0.5441811, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 635105012}
@@ -239,34 +239,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3510521448856395124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3510521448856395123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72394864d6ee40d4ebd4f3d0e42e9589, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerRB: {fileID: 3510521448856395127}
-  moveSpeed: 2
---- !u!114 &6976640634305865695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3510521448856395123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d90b75ec023f9b4ea58acd2f542b06b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  travelerLight: {fileID: 635105011}
-  playerHUD: {fileID: 4489380068571502179}
 --- !u!95 &2028348103422656277
 Animator:
   serializedVersion: 4
@@ -287,6 +259,34 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6976640634305865695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3510521448856395123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d90b75ec023f9b4ea58acd2f542b06b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  travelerLight: {fileID: 635105011}
+  playerHUD: {fileID: 4489380068571502179}
+--- !u!114 &3510521448856395124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3510521448856395123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72394864d6ee40d4ebd4f3d0e42e9589, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 1
+  playerAnimationState: 0
 --- !u!1001 &6520651490750230541
 PrefabInstance:
   m_ObjectHideFlags: 0

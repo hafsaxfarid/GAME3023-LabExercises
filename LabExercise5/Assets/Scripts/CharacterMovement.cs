@@ -4,17 +4,61 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    [SerializeField]
-    Rigidbody2D playerRB;
-
+    [Header("Movement")]
     [SerializeField]
     [Range(0, 10)]
     float moveSpeed = 3;
 
-    void Update()
+    //[SerializeField]
+    private Rigidbody2D playerRB;
+    
+    [Header("Animation")]
+    public PlayerAnimationState playerAnimationState;
+
+    private Animator playerAnimationController;
+    private string animationState = "AnimationState";
+
+    private void Start()
+    {
+        playerRB = GetComponent<Rigidbody2D>();
+        playerAnimationController = GetComponent<Animator>();
+    }
+
+    void FixedUpdate()
+    {
+        MovePlayer();
+    }
+
+    private void MovePlayer()
     {
         float inputX = Input.GetAxisRaw("Horizontal");
         float inputY = Input.GetAxisRaw("Vertical");
+
+        if(inputX > 0) // moving right
+        {
+            playerAnimationController.SetInteger(animationState, (int)PlayerAnimationState.WALK_RIGHT);
+            playerAnimationState = PlayerAnimationState.WALK_RIGHT;
+        }
+        else if(inputX < 0) // moving left
+        {
+            playerAnimationController.SetInteger(animationState, (int)PlayerAnimationState.WALK_LEFT);
+            playerAnimationState = PlayerAnimationState.WALK_LEFT;
+        }
+        else if (inputY > 0) // moving up
+        {
+            playerAnimationController.SetInteger(animationState, (int)PlayerAnimationState.WALK_UP);
+            playerAnimationState = PlayerAnimationState.WALK_UP;
+        }
+        else if (inputY < 0) // moving down
+        {
+            playerAnimationController.SetInteger(animationState, (int)PlayerAnimationState.WALK_DOWN);
+            playerAnimationState = PlayerAnimationState.WALK_DOWN;
+        }
+        else // idle when not moving
+        {
+            playerAnimationController.SetInteger(animationState, (int)PlayerAnimationState.IDLE);
+            playerAnimationState = PlayerAnimationState.IDLE;
+        }
 
         playerRB.velocity = new Vector3(inputX, inputY, 0) * moveSpeed;
     }
