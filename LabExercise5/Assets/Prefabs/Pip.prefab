@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 3510521448856395127}
   - component: {fileID: 3510521448856395124}
   - component: {fileID: 6976640634305865695}
+  - component: {fileID: 2028348103422656277}
   m_Layer: 6
   m_Name: Pip
   m_TagString: Player
@@ -147,7 +148,7 @@ Transform:
   - {fileID: 635105012}
   - {fileID: 4489380068571502191}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3510521448856395122
 SpriteRenderer:
@@ -266,6 +267,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   travelerLight: {fileID: 635105011}
   playerHUD: {fileID: 4489380068571502179}
+--- !u!95 &2028348103422656277
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3510521448856395123}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ed729d3f6b2b3f0408047b95c1cafa7a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &6520651490750230541
 PrefabInstance:
   m_ObjectHideFlags: 0
