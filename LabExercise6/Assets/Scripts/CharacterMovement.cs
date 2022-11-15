@@ -15,6 +15,10 @@ public class CharacterMovement : MonoBehaviour
     [Header("Animation")]
     public PlayerAnimationState playerAnimationState;
 
+    [Header("Enemy Encounter")]
+    public LayerMask encounterLayer;
+    //public bool enemyEncountered = false;
+
     private Animator playerAnimationController;
     private string animationState = "AnimationState";
 
@@ -61,5 +65,18 @@ public class CharacterMovement : MonoBehaviour
         }
 
         playerRB.velocity = new Vector3(inputX, inputY, 0) * moveSpeed;
+        CheckEncounter();
+    }
+
+    private void CheckEncounter()
+    {
+        if (Physics2D.OverlapCircle(transform.position, 0.03f, encounterLayer) != null)
+        {
+            if (Random.Range(1, 101) <= 10)
+            {
+                Debug.Log("Enemy Encounter!");
+                //enemyEncountered = true;
+            }
+        }
     }
 }
