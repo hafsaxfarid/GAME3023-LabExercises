@@ -267,7 +267,7 @@ Transform:
   - {fileID: 4489380068571502191}
   - {fileID: 635105012}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3510521448856395122
 SpriteRenderer:
@@ -392,6 +392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   travelerLight: {fileID: 635105011}
   playerHUD: {fileID: 4489380068571502179}
+  playerCamera: {fileID: 251538273}
 --- !u!114 &3510521448856395124
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,7 +410,6 @@ MonoBehaviour:
   encounterLayer:
     serializedVersion: 2
     m_Bits: 128
-  enemyEncountered: 0
 --- !u!1001 &6520651490750230541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -418,6 +418,50 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 3510521448856395125}
     m_Modifications:
+    - target: {fileID: 3284935094994227799, guid: 75fe576754219c34781fe5d0b06650d3, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284935094994227799, guid: 75fe576754219c34781fe5d0b06650d3, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284935094994227799, guid: 75fe576754219c34781fe5d0b06650d3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 212.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284935094994227799, guid: 75fe576754219c34781fe5d0b06650d3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -583.3333
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284935095248765642, guid: 75fe576754219c34781fe5d0b06650d3, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284935095992784594, guid: 75fe576754219c34781fe5d0b06650d3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 3284935096106160045, guid: 75fe576754219c34781fe5d0b06650d3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5574109102229278656, guid: 75fe576754219c34781fe5d0b06650d3, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5574109102229278656, guid: 75fe576754219c34781fe5d0b06650d3, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5574109102229278656, guid: 75fe576754219c34781fe5d0b06650d3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 212.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5574109102229278656, guid: 75fe576754219c34781fe5d0b06650d3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -350
+      objectReference: {fileID: 0}
     - target: {fileID: 7220249426674427490, guid: 75fe576754219c34781fe5d0b06650d3, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -513,6 +557,22 @@ PrefabInstance:
     - target: {fileID: 7220249426674427502, guid: 75fe576754219c34781fe5d0b06650d3, type: 3}
       propertyPath: m_Name
       value: CanvasHUD
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440510363553642478, guid: 75fe576754219c34781fe5d0b06650d3, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440510363553642478, guid: 75fe576754219c34781fe5d0b06650d3, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440510363553642478, guid: 75fe576754219c34781fe5d0b06650d3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 212.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440510363553642478, guid: 75fe576754219c34781fe5d0b06650d3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -116.666664
       objectReference: {fileID: 0}
     - target: {fileID: 7440510363553642479, guid: 75fe576754219c34781fe5d0b06650d3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target

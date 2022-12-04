@@ -11,7 +11,7 @@ public class CharacterMovement : MonoBehaviour
 
     //[SerializeField]
     private Rigidbody2D playerRB;
-    
+
     [Header("Animation")]
     public PlayerAnimationState playerAnimationState;
 
@@ -28,9 +28,16 @@ public class CharacterMovement : MonoBehaviour
         playerAnimationController = GetComponent<Animator>();
     }
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
-        MovePlayer();
+        if(GameManager.gmInstance.state == GameState.FreeRoam)
+        {
+            MovePlayer();
+        }
+        else
+        {
+            Debug.Log("In Battle");
+        }
     }
 
     private void MovePlayer()
@@ -38,12 +45,12 @@ public class CharacterMovement : MonoBehaviour
         float inputX = Input.GetAxisRaw("Horizontal");
         float inputY = Input.GetAxisRaw("Vertical");
 
-        if(inputX > 0) // moving right
+        if (inputX > 0) // moving right
         {
             playerAnimationController.SetInteger(animationState, (int)PlayerAnimationState.WALK_RIGHT);
             playerAnimationState = PlayerAnimationState.WALK_RIGHT;
         }
-        else if(inputX < 0) // moving left
+        else if (inputX < 0) // moving left
         {
             playerAnimationController.SetInteger(animationState, (int)PlayerAnimationState.WALK_LEFT);
             playerAnimationState = PlayerAnimationState.WALK_LEFT;
@@ -63,7 +70,7 @@ public class CharacterMovement : MonoBehaviour
             playerAnimationController.SetInteger(animationState, (int)PlayerAnimationState.IDLE);
             playerAnimationState = PlayerAnimationState.IDLE;
         }
-
+     
         playerRB.velocity = new Vector3(inputX, inputY, 0) * moveSpeed;
         CheckEncounter();
     }
@@ -74,8 +81,8 @@ public class CharacterMovement : MonoBehaviour
         {
             if (Random.Range(1, 101) <= 10)
             {
-                Debug.Log("Enemy Encounter!");
-                //enemyEncountered = true;
+                //Debug.Log("Enemy Encounter!");
+                GameManager.gmInstance.state = GameState.BattleMode;
             }
         }
     }

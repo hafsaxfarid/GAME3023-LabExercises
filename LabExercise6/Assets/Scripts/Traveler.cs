@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Traveler : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class Traveler : MonoBehaviour
     [SerializeField]
     public GameObject playerHUD;
 
+    [SerializeField]
+    public Camera playerCamera;
+
     private void Start()
     {
         DestroyIfNotOriginal();
@@ -25,6 +29,8 @@ public class Traveler : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         SceneManager.sceneLoaded += OnLoadSceneAction;
+
+        playerCamera.gameObject.SetActive(true);
     }
 
     private void Update()
