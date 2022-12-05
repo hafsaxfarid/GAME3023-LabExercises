@@ -15,7 +15,7 @@ MonoBehaviour:
   enemyIcon: {fileID: -4256795320221200915, guid: 43f6bb244a62313438cda197a8e07007, type: 3}
   enemyName: Chameleon
   enemyDescription: Funky Chameleon
-  enemyLevel: 10
+  enemyLevel: 4
   enemyHealth: 100
   enemyAttrack: 100
   enemyEff1: 4

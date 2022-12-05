@@ -15,7 +15,7 @@ MonoBehaviour:
   enemyIcon: {fileID: -820748739254766286, guid: d4f2f936f814df24fb7559370c465cdc, type: 3}
   enemyName: Shady Ghost
   enemyDescription: BOO
-  enemyLevel: 0
+  enemyLevel: 6
   enemyHealth: 0
-  enemyAttrack: 0
+  enemyAttrack: 57
   enemyEff1: 1

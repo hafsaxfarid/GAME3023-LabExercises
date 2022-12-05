@@ -11,7 +11,7 @@ public class BattleUnit : MonoBehaviour
     [SerializeField]
     public Image enemyImageSprite;
 
-    private EnemyBase enemyBase;
+    //private EnemyBase enemyBase;
 
     public int enemyNumber;
 
@@ -37,6 +37,7 @@ public class BattleUnit : MonoBehaviour
     {
         enemyImageSprite.sprite = enemies[enemyNumber].enemyIcon;
         BattleSystem.bsInstance.dialogText.text = enemies[enemyNumber].enemyDescription;
+        BattleSystem.bsInstance.enemyBattleHUD.SetHUD(enemies[enemyNumber].enemyName, enemies[enemyNumber].enemyLevel);
     }
 
     void RandomEnemy()

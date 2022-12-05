@@ -8,6 +8,8 @@ public class BattleSystem : MonoBehaviour
     [SerializeField]
     public TextMeshProUGUI dialogText;
 
+    public BattleHUD enemyBattleHUD;
+
     public static BattleSystem bsInstance;
 
     private void Awake()

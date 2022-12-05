@@ -15,7 +15,7 @@ MonoBehaviour:
   enemyIcon: {fileID: -5219337101871392587, guid: bf4df7b2c9cda4c44b372e2b47a5cb8f, type: 3}
   enemyName: Stump
   enemyDescription: BONK!
-  enemyLevel: 1
+  enemyLevel: 6
   enemyHealth: 100
   enemyAttrack: 35
   enemyEff1: 3
