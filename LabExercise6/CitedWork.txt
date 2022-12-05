@@ -1,5 +1,4 @@
 Work Cited For Binary Saving
-
 - previous lab assignment [ GAME3004 – Mobile Game Development II ]
 --> lab demo link: https://youtu.be/l6VDQVVK-b8?t=4219
 
@@ -14,3 +13,15 @@ Work Cited For Binary Saving
 
 - Different Enemy Types
 --> https://www.youtube.com/watch?v=x8B_eXfcj6U&list=PLLf84Zj7U26kfPQ00JVI2nIoozuPkykDX&index=6
+
+AUDIO LINKS (Used to convert to wav files: https://cloudconvert.com/mp3-to-wav)
+
+- Town Music
+--> https://opengameart.org/content/a-new-town-rpg-theme
+
+- OverWorld Music
+--> https://opengameart.org/content/dark-forest-theme
+
+- Battle Music
+--> https://opengameart.org/content/battle-theme-b-for-rpg
+
