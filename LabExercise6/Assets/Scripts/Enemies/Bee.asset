@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9237d7858bc72084085679c71ce65574, type: 3}
+  m_Name: Bee
+  m_EditorClassIdentifier: 
+  enemyIcon: {fileID: -7659945631384244969, guid: 8721cbbfe3ba6a8418cd21a8de3a410c, type: 3}
+  enemyName: Beez
+  enemyDescription: Bzzzzzzz
+  enemyLevel: 10
+  enemyHealth: 100
+  enemyAttrack: 11
+  enemyEff1: 2

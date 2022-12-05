@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
 
     public GameState state;
 
+    public bool inBattle;
+
     public static GameManager gmInstance;
 
     private void Awake()
@@ -32,6 +34,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         state = GameState.FreeRoam;
+        inBattle = false;
     }
 
     void Update()
@@ -39,19 +42,22 @@ public class GameManager : MonoBehaviour
         if(state == GameState.FreeRoam)
         {
             // Disable battle scene, enable player controller camera
+            inBattle = false;
             battle.gameObject.SetActive(false);
             traveler.playerCamera.gameObject.SetActive(true);
         }
         else if(state == GameState.BattleMode)
         {
             // Disable player controller camera, enable battle scene
+            inBattle = true;
             traveler.playerCamera.gameObject.SetActive(false);
             battle.gameObject.SetActive(true);
         }
 
         if(Input.GetKeyDown(KeyCode.P))
         {
-            state = GameState.FreeRoam;       
+            inBattle = false;
+            state = GameState.FreeRoam;
         }
     }
 }
