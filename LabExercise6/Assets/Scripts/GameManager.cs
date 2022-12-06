@@ -43,7 +43,6 @@ public class GameManager : MonoBehaviour
         {
             // Disable battle scene, enable player controller camera
             inBattle = false;
-            //CheckActiveScene();
             battle.gameObject.SetActive(false);
             traveler.playerCamera.gameObject.SetActive(true);
         }
