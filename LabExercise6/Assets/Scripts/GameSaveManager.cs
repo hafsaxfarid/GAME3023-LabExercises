@@ -95,12 +95,12 @@ public class GameSaveManager : MonoBehaviour
             if (loadSceneIndex == 1)
             {
                 SpawnPoint.player.travelerLight.gameObject.SetActive(false);
-                AudioManager.amInstance.CrossFade(TrackID.Town, 0.5f);
+                AudioManager.amInstance.PlayAudio(TrackID.Town);
             }
             else
             {
                 SpawnPoint.player.travelerLight.gameObject.SetActive(true);
-                AudioManager.amInstance.CrossFade(TrackID.Overworld, 0.5f);
+                AudioManager.amInstance.PlayAudio(TrackID.Overworld);
             }
 
             Debug.Log("Game data loaded!");

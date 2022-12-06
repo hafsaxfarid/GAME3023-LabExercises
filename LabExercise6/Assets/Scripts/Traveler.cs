@@ -62,11 +62,13 @@ public class Traveler : MonoBehaviour
                     {
                         travelerLight.SetActive(true);
                         playerHUD.SetActive(true);
+                        AudioManager.amInstance.PlayAudio(TrackID.Overworld);
                     }
                     else
                     {
-                        travelerLight.SetActive(false);
+                        travelerLight.SetActive(false); 
                         playerHUD.SetActive(true);
+                        AudioManager.amInstance.PlayAudio(TrackID.Town);
                     }
                 }
             }

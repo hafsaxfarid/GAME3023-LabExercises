@@ -19,5 +19,6 @@ public class PortalManager : MonoBehaviour
             traveler.LastPortalExitSpawnName = portalExitSpawnName;
             SceneManager.LoadScene(gameObject.tag, LoadSceneMode.Single);
         }
+        //GameManager.gmInstance.CheckActiveScene();
     }
 }

@@ -63,15 +63,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void CheckActiveScene()
+    public void CheckActiveScene()
     {
         if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 1)
         {
-            AudioManager.amInstance.CrossFade(TrackID.Town, 0.5f);
+            AudioManager.amInstance.PlayAudio(TrackID.Town);
         }
         else
         {
-            AudioManager.amInstance.CrossFade(TrackID.Overworld, 0.5f);
+            AudioManager.amInstance.PlayAudio(TrackID.Overworld);
         }
     }
 }

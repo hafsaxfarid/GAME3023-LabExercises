@@ -40,7 +40,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        audioSource1.Play();
+        PlayAudio(TrackID.MainMenu);
     }
 
     public void PlayAudio(TrackID trackID)
@@ -48,22 +48,24 @@ public class AudioManager : MonoBehaviour
         audioSource1.Stop();
         audioSource2.Stop();
 
+        audioSource2.clip = audioSource1.clip;
+
         audioSource1.clip = musicTrackClips[(int)trackID];
         audioSource1.Play();
     }
 
-    public void CrossFade(TrackID newTrackID, float duration)
-    {
-        AudioSource oldTrack = audioSource1;
-        AudioSource newTrack = audioSource2;
-
-        if (audioSource1.isPlaying)
-        {
-            oldTrack = audioSource2;
-            newTrack = audioSource1;
-        }
-
-        newTrack.clip = musicTrackClips[(int)newTrackID];
-        newTrack.Play();
-    }
+    //public void CrossFade(TrackID newTrackID, float duration)
+    //{
+    //    AudioSource oldTrack = audioSource1;
+    //    AudioSource newTrack = audioSource2;
+    //
+    //    if (audioSource1.isPlaying)
+    //    {
+    //        oldTrack = audioSource2;
+    //        newTrack = audioSource1;
+    //    }
+    //
+    //    newTrack.clip = musicTrackClips[(int)newTrackID];
+    //    newTrack.Play();
+    //}
 }

@@ -21,14 +21,12 @@ public class SpawnPoint : MonoBehaviour
 
             if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Overworld")
             {
-                AudioManager.amInstance.CrossFade(TrackID.Overworld, 0.5f);
                 player.travelerLight.gameObject.SetActive(true);
                 //Debug.Log("Spawned in Overworld!");
             }
             else
             {
-                AudioManager.amInstance.CrossFade(TrackID.Town, 0.5f);
-                player.travelerLight.gameObject.SetActive(false);
+                player.travelerLight.gameObject.SetActive(false);                
                 //Debug.Log("Spawned in Town!");
             }
         }
