@@ -39,10 +39,11 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if(state == GameState.FreeRoam)
+        if (state == GameState.FreeRoam)
         {
             // Disable battle scene, enable player controller camera
             inBattle = false;
+            //CheckActiveScene();
             battle.gameObject.SetActive(false);
             traveler.playerCamera.gameObject.SetActive(true);
         }
@@ -57,7 +58,20 @@ public class GameManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.P))
         {
             inBattle = false;
+            CheckActiveScene();
             state = GameState.FreeRoam;
+        }
+    }
+
+    private void CheckActiveScene()
+    {
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            AudioManager.amInstance.CrossFade(TrackID.Town, 0.5f);
+        }
+        else
+        {
+            AudioManager.amInstance.CrossFade(TrackID.Overworld, 0.5f);
         }
     }
 }

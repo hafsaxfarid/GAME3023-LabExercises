@@ -82,6 +82,7 @@ public class CharacterMovement : MonoBehaviour
             if (Random.Range(1, 101) <= 10)
             {
                 //Debug.Log("Enemy Encounter!");
+                AudioManager.amInstance.CrossFade(TrackID.Battle, 1f);
                 GameManager.gmInstance.state = GameState.BattleMode;
             }
         }

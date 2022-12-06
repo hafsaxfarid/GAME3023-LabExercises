@@ -24,7 +24,9 @@ public class SceneController : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("Town");
+        AudioManager.amInstance.CrossFade(TrackID.Town, 0.5f);
         GameSaveManager.gsmInstance.continueGame = false;
+
     }
 
     public void ContinueGame()
@@ -55,5 +57,6 @@ public class SceneController : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
+        AudioManager.amInstance.CrossFade(TrackID.MainMenu, 0.5f);
     }
 }
