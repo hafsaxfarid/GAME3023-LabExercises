@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    private static SceneController scInstance;
+    public static SceneController scInstance;
 
     private void Awake()
     {
@@ -23,6 +23,7 @@ public class SceneController : MonoBehaviour
     public void NewGame()
     {
         Time.timeScale = 1f;
+        LevelLoader.llInstance.nextLevel = true;
         SceneManager.LoadScene("Town");
         AudioManager.amInstance.PlayAudio(TrackID.Town);
         GameSaveManager.gsmInstance.continueGame = false;
@@ -56,6 +57,7 @@ public class SceneController : MonoBehaviour
     public void MainMenu()
     {
         Time.timeScale = 1f;
+        LevelLoader.llInstance.nextLevel = true;
         SceneManager.LoadScene("MainMenu");
         AudioManager.amInstance.PlayAudio(TrackID.MainMenu);
     }

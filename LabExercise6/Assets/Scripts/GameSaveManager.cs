@@ -86,6 +86,8 @@ public class GameSaveManager : MonoBehaviour
             var y = data.playerPositionY;
             var z = data.playerPositionZ;
 
+            LevelLoader.llInstance.nextLevel = true;
+
             UnityEngine.SceneManagement.SceneManager.LoadScene(loadSceneIndex);
 
             GameObject newPlayer = Instantiate(playerPrefab, new Vector3(x, y, z), Quaternion.identity);

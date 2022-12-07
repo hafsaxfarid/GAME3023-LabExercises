@@ -60,12 +60,14 @@ public class Traveler : MonoBehaviour
 
                     if (exitPoint.name == "PortalExitFromTown")
                     {
+                        LevelLoader.llInstance.nextLevel = true;
                         travelerLight.SetActive(true);
                         playerHUD.SetActive(true);
                         AudioManager.amInstance.PlayAudio(TrackID.Overworld);
                     }
                     else
                     {
+                        LevelLoader.llInstance.nextLevel = true;
                         travelerLight.SetActive(false); 
                         playerHUD.SetActive(true);
                         AudioManager.amInstance.PlayAudio(TrackID.Town);
