@@ -72,4 +72,21 @@ public class ItemSlot : MonoBehaviour
 
         return true;
     }
+    
+    public bool IsSlotEmpty()
+    {
+        if(item == null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public Item SetItem()
+    {
+        return item;
+    }
 }
