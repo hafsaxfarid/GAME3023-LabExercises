@@ -7,7 +7,7 @@ public class CharacterMovement : MonoBehaviour
     [Header("Movement")]
     [SerializeField]
     [Range(0, 10)]
-    float moveSpeed = 3;
+    public float moveSpeed = 3;
 
     //[SerializeField]
     private Rigidbody2D playerRB;

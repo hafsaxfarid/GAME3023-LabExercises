@@ -147,6 +147,7 @@ GameObject:
   - component: {fileID: 1728648845}
   - component: {fileID: 1728648844}
   - component: {fileID: 1728648846}
+  - component: {fileID: 4314870432410771353}
   m_Layer: 5
   m_Name: Icon
   m_TagString: Untagged
@@ -269,6 +270,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4314870432410771353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728648842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 13
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8038458382309318993, guid: e0271c099c58d3a4e8a385152a1d1569, type: 3}
+          m_TargetAssemblyTypeName: CraftingManager, Assembly-CSharp
+          m_MethodName: OnMouseDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &5110042011970122619
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +311,6 @@ GameObject:
   - component: {fileID: 5110042011970122612}
   - component: {fileID: 5110042011970122613}
   - component: {fileID: 6623480155089336622}
-  - component: {fileID: 2357310051510165362}
   m_Layer: 5
   m_Name: ItemSlot
   m_TagString: Untagged
@@ -334,7 +363,7 @@ MonoBehaviour:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -364,32 +393,3 @@ MonoBehaviour:
   itemCount: 0
   itemIcon: {fileID: 1728648844}
   itemCountText: {fileID: 428001397}
---- !u!114 &2357310051510165362
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5110042011970122619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 13
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 8038458382309318993, guid: e0271c099c58d3a4e8a385152a1d1569, type: 3}
-          m_TargetAssemblyTypeName: CraftingManager, Assembly-CSharp
-          m_MethodName: OnMouseDragItem
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2

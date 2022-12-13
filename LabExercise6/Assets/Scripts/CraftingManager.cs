@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CraftingManager : MonoBehaviour
 {
@@ -11,7 +12,10 @@ public class CraftingManager : MonoBehaviour
     private ItemSlot[] itemSlot;
 
     [SerializeField]
-    private Item[] items;
+    private List<Item> items = new List<Item>();
+
+    [SerializeField]
+    public Image customCursor;
 
     public int itemCount = 0;
 
@@ -24,25 +28,28 @@ public class CraftingManager : MonoBehaviour
     {
         if (Input.GetMouseButtonUp(0))
         {
-            for (int i = 0; i < items.Length; i++)
+            for (int i = 0; i < items.Count; i++)
             {
                 if (currentItem == items[i])
                 {
                     currentItem = null;
+                    customCursor.gameObject.SetActive(false);
                     Debug.Log("ITEM RELEASED");
                 }
             }
         }
     }
 
-    public void OnMouseDragItem()
+    public void OnMouseDown()
     {
-        if (currentItem == null)
+        for (int i = 0; i < items.Count; i++)
         {
-            for (int i = 0; i < items.Length; i++)
+            if (currentItem == null)
             {
-                currentItem = items[i];
+                customCursor.gameObject.SetActive(true);
+                currentItem = itemSlot[i].SetItem();
                 currentItem.itemIcon = items[i].itemIcon;
+                customCursor.sprite = currentItem.itemIcon;
                 Debug.Log("NEW ITEM");
             }
         }
@@ -56,7 +63,7 @@ public class CraftingManager : MonoBehaviour
             if (itemSlot[i].IsSlotEmpty() == false)
             {
                 itemCount += 1;
-                items = new Item[itemCount];
+                items.Add(itemSlot[i].SetItem());
                 items[temp] = itemSlot[i].SetItem();
             }
         }
