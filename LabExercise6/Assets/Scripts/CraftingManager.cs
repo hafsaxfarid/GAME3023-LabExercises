@@ -12,6 +12,7 @@ public class CraftingManager : MonoBehaviour
     private ItemSlot[] itemSlot;
 
     [SerializeField]
+    //private Item[] items;
     private List<Item> items = new List<Item>();
 
     [SerializeField]
@@ -28,6 +29,7 @@ public class CraftingManager : MonoBehaviour
     {
         if (Input.GetMouseButtonUp(0))
         {
+            //for (int i = 0; i < items.Length; i++)
             for (int i = 0; i < items.Count; i++)
             {
                 if (currentItem == items[i])
@@ -40,11 +42,12 @@ public class CraftingManager : MonoBehaviour
         }
     }
 
-    public void OnMouseDown()
+    public void OnMouseDrag()
     {
-        for (int i = 0; i < items.Count; i++)
+        if (currentItem == null)
         {
-            if (currentItem == null)
+            //for (int i = 0; i < items.Length; i++)
+            for (int i = 0; i < items.Count; i++)
             {
                 customCursor.gameObject.SetActive(true);
                 currentItem = itemSlot[i].SetItem();
@@ -54,7 +57,22 @@ public class CraftingManager : MonoBehaviour
             }
         }
     }
-    
+
+    /*public void OnMouseDown()
+    {
+        if (currentItem == null)
+        {
+            for (int i = 0; i < items.Length; i++)
+            {
+                customCursor.gameObject.SetActive(true);
+                currentItem = itemSlot[i].SetItem();
+                currentItem.itemIcon = items[i].itemIcon;
+                customCursor.sprite = currentItem.itemIcon;
+                Debug.Log("NEW ITEM");
+            }
+        }
+    }*/
+
     void UpdateItems()
     {
         for (int i = 0; i < itemSlot.Length; i++)
@@ -64,6 +82,7 @@ public class CraftingManager : MonoBehaviour
             {
                 itemCount += 1;
                 items.Add(itemSlot[i].SetItem());
+                //items = new Item[itemCount];
                 items[temp] = itemSlot[i].SetItem();
             }
         }

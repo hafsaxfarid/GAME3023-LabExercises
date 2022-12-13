@@ -11,6 +11,6 @@ public class CustomCursor : MonoBehaviour
 
     void Update()
     {
-        
+        transform.position = Input.mousePosition;
     }
 }
