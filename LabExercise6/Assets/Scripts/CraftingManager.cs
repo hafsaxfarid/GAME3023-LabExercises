@@ -9,69 +9,46 @@ public class CraftingManager : MonoBehaviour
     private Item currentItem;
 
     [SerializeField]
-    private ItemSlot[] itemSlot;
-
-    [SerializeField]
-    //private Item[] items;
-    private List<Item> items = new List<Item>();
-
-    [SerializeField]
     public Image customCursor;
 
     public int itemCount = 0;
 
+    [SerializeField]
+    private ItemSlot[] itemSlot;
+
+    [SerializeField]
+    private List<Item> items = new List<Item>();
+
+    [SerializeField]
+    private Image[] itemImage;
+
     private void Awake()
     {
         UpdateItems();
+        UpdateItemSprites();
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonUp(0))
+        if(Input.GetMouseButtonUp(0))
         {
-            //for (int i = 0; i < items.Length; i++)
-            for (int i = 0; i < items.Count; i++)
+            if(currentItem != null)
             {
-                if (currentItem == items[i])
-                {
-                    currentItem = null;
-                    customCursor.gameObject.SetActive(false);
-                    Debug.Log("ITEM RELEASED");
-                }
+                customCursor.gameObject.SetActive(false);
+                currentItem = null;
             }
         }
     }
 
-    public void OnMouseDrag()
+    public void OnMouseDownItem(ItemSlot itemSlot)
     {
         if (currentItem == null)
         {
-            //for (int i = 0; i < items.Length; i++)
-            for (int i = 0; i < items.Count; i++)
-            {
-                customCursor.gameObject.SetActive(true);
-                currentItem = itemSlot[i].SetItem();
-                currentItem.itemIcon = items[i].itemIcon;
-                customCursor.sprite = currentItem.itemIcon;
-                Debug.Log("NEW ITEM");
-            }
+            currentItem = itemSlot.item;
+            customCursor.gameObject.SetActive(true);
+            customCursor.sprite = currentItem.itemIcon;
         }
     }
-
-    /*public void OnMouseDown()
-    {
-        if (currentItem == null)
-        {
-            for (int i = 0; i < items.Length; i++)
-            {
-                customCursor.gameObject.SetActive(true);
-                currentItem = itemSlot[i].SetItem();
-                currentItem.itemIcon = items[i].itemIcon;
-                customCursor.sprite = currentItem.itemIcon;
-                Debug.Log("NEW ITEM");
-            }
-        }
-    }*/
 
     void UpdateItems()
     {
@@ -82,10 +59,16 @@ public class CraftingManager : MonoBehaviour
             {
                 itemCount += 1;
                 items.Add(itemSlot[i].SetItem());
-                //items = new Item[itemCount];
                 items[temp] = itemSlot[i].SetItem();
             }
         }
     }
-}
 
+    void UpdateItemSprites()
+    {
+        for (int i = 0; i < items.Count; i++)
+        {
+            itemImage[i].sprite = items[i].itemIcon;
+        }
+    }
+}

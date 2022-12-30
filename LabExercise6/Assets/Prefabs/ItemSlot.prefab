@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 1728648845}
   - component: {fileID: 1728648844}
   - component: {fileID: 1728648846}
-  - component: {fileID: 4314870432410771353}
+  - component: {fileID: 6799495847843689732}
   m_Layer: 5
   m_Name: Icon
   m_TagString: Untagged
@@ -257,20 +257,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1728648844}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6623480155089336622}
-        m_TargetAssemblyTypeName: ItemSlot, Assembly-CSharp
-        m_MethodName: UseItemInSlot
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &4314870432410771353
+      m_Calls: []
+--- !u!114 &6799495847843689732
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -283,33 +271,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Delegates:
-  - eventID: 13
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 8038458382309318993, guid: e0271c099c58d3a4e8a385152a1d1569, type: 3}
-          m_TargetAssemblyTypeName: CraftingManager, Assembly-CSharp
-          m_MethodName: OnMouseDrag
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
   - eventID: 2
     callback:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 8038458382309318993, guid: e0271c099c58d3a4e8a385152a1d1569, type: 3}
           m_TargetAssemblyTypeName: CraftingManager, Assembly-CSharp
-          m_MethodName: OnMouseDrag
-          m_Mode: 1
+          m_MethodName: OnMouseDownItem
+          m_Mode: 2
           m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_ObjectArgument: {fileID: 6623480155089336622}
+            m_ObjectArgumentAssemblyTypeName: ItemSlot, Assembly-CSharp
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -405,7 +377,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f263bc93e7cbf78408c43a5bf9cda5ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 0}
-  itemCount: 0
+  item: {fileID: 11400000, guid: db88a74e6d22bbf40987fdb7763578fa, type: 2}
+  itemCount: 55
   itemIcon: {fileID: 1728648844}
   itemCountText: {fileID: 428001397}
