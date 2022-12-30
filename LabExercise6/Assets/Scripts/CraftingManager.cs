@@ -30,9 +30,9 @@ public class CraftingManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0))
         {
-            if(currentItem != null)
+            if (currentItem != null)
             {
                 customCursor.gameObject.SetActive(false);
                 currentItem = null;
@@ -68,7 +68,11 @@ public class CraftingManager : MonoBehaviour
     {
         for (int i = 0; i < items.Count; i++)
         {
-            itemImage[i].sprite = items[i].itemIcon;
+            for (int j = i; j < items.Count; j++)
+            {
+                itemImage[j].gameObject.SetActive(true);
+                itemImage[j].sprite = items[i].itemIcon;
+            }
         }
     }
 }
