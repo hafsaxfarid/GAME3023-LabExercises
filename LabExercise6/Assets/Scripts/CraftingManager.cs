@@ -22,6 +22,9 @@ public class CraftingManager : MonoBehaviour
     [SerializeField]
     private Image[] itemImage;
 
+    [SerializeField]
+    private ItemSlot[] craftingSlots;
+
     private void Awake()
     {
         UpdateItems();
@@ -35,6 +38,22 @@ public class CraftingManager : MonoBehaviour
             if (currentItem != null)
             {
                 customCursor.gameObject.SetActive(false);
+
+                ItemSlot nearestSlot = null;
+                float shortestDistance = float.MaxValue;
+
+                foreach(ItemSlot slot in craftingSlots)
+                {
+                    float distance = Vector2.Distance(Input.mousePosition, slot.transform.position);
+                    
+                    if(distance < shortestDistance)
+                    {
+                        shortestDistance = distance;
+                        nearestSlot = slot;
+                    }
+                    nearestSlot.item = currentItem;
+                }
+                nearestSlot.CreateItem(currentItem);
                 currentItem = null;
             }
         }

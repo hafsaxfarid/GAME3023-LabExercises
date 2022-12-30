@@ -90,9 +90,9 @@ public class ItemSlot : MonoBehaviour
         return item;
     }
 
-    public void CreateItem(Item item)
+    public void CreateItem(Item tempItem)
     {
-        itemCount += 1;
+        itemCount = 1;
         UpdateItemGraphic();
     }
 }
