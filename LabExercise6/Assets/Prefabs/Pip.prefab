@@ -435,9 +435,29 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1439473450, guid: 75fe576754219c34781fe5d0b06650d3, type: 3}
+      propertyPath: resultSlot
+      value: 
+      objectReference: {fileID: 6623480154415084120}
+    - target: {fileID: 1439473450, guid: 75fe576754219c34781fe5d0b06650d3, type: 3}
       propertyPath: customCursor
       value: 
       objectReference: {fileID: 8988517632444050765}
+    - target: {fileID: 1439473450, guid: 75fe576754219c34781fe5d0b06650d3, type: 3}
+      propertyPath: recipes.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439473450, guid: 75fe576754219c34781fe5d0b06650d3, type: 3}
+      propertyPath: recipes.Array.data[0]
+      value: CoinCoinCoin
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439473450, guid: 75fe576754219c34781fe5d0b06650d3, type: 3}
+      propertyPath: recipes.Array.data[1]
+      value: VioletFeatherCoinNull
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439473450, guid: 75fe576754219c34781fe5d0b06650d3, type: 3}
+      propertyPath: recipeItems.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1439473450, guid: 75fe576754219c34781fe5d0b06650d3, type: 3}
       propertyPath: craftingSlots.Array.size
       value: 3
@@ -454,6 +474,18 @@ PrefabInstance:
       propertyPath: craftingSlots.Array.data[2]
       value: 
       objectReference: {fileID: 6623480155778997633}
+    - target: {fileID: 1439473450, guid: 75fe576754219c34781fe5d0b06650d3, type: 3}
+      propertyPath: recipeResultItems.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1439473450, guid: 75fe576754219c34781fe5d0b06650d3, type: 3}
+      propertyPath: recipeResultItems.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3124b560b6c580146a2ee0b90914cdd1, type: 2}
+    - target: {fileID: 1439473450, guid: 75fe576754219c34781fe5d0b06650d3, type: 3}
+      propertyPath: recipeResultItems.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 40ae855d7324c764890fb42b5827742f, type: 2}
     - target: {fileID: 1591184148574564797, guid: 75fe576754219c34781fe5d0b06650d3, type: 3}
       propertyPath: m_Name
       value: Crafting
@@ -1914,6 +1946,17 @@ MonoBehaviour:
 --- !u!114 &6583449155927891610 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 81942048107966103, guid: 75fe576754219c34781fe5d0b06650d3, type: 3}
+  m_PrefabInstance: {fileID: 6520651490750230541}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f263bc93e7cbf78408c43a5bf9cda5ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6623480154415084120 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114091787043947093, guid: 75fe576754219c34781fe5d0b06650d3, type: 3}
   m_PrefabInstance: {fileID: 6520651490750230541}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

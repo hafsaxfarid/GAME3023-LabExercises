@@ -19,11 +19,25 @@ public class CraftingManager : MonoBehaviour
     [SerializeField]
     private List<Item> items = new List<Item>();
 
+    [Header("Crafting")]
     [SerializeField]
     private Image[] itemImage;
 
     [SerializeField]
     private ItemSlot[] craftingSlots;
+
+    [Header("Recipe Items")]
+    [SerializeField]
+    private List<Item> recipeItems = new List<Item>();
+
+    [SerializeField]
+    private string[] recipes;
+
+    [SerializeField]
+    private Item[] recipeResultItems;
+
+    [SerializeField]
+    private ItemSlot resultSlot;
 
     private void Awake()
     {
@@ -33,6 +47,8 @@ public class CraftingManager : MonoBehaviour
 
     private void Update()
     {
+        
+
         if (Input.GetMouseButtonUp(0))
         {
             if (currentItem != null)
@@ -51,12 +67,45 @@ public class CraftingManager : MonoBehaviour
                         shortestDistance = distance;
                         nearestSlot = slot;
                     }
-                    nearestSlot.item = currentItem;
                 }
+                nearestSlot.item = currentItem;
+                UpdateRecipeItems(currentItem);
                 nearestSlot.CreateItem(currentItem);
                 currentItem = null;
+
+                CheckForCompletedRecipe();
             }
         }
+    }
+
+    private void CheckForCompletedRecipe()
+    {
+        resultSlot.item = null;
+
+        string currentRecipeString = "";
+
+
+        foreach(Item item in recipeResultItems)
+        {
+            if(item != null)
+            {
+                currentRecipeString += item.name;
+            }
+            else
+            {
+                currentRecipeString += "Null";
+            }
+        }
+
+        for(int i = 0; i < recipes.Length; i++)
+        {
+            if(recipes[i] == currentRecipeString)
+            {
+                resultSlot.item = recipeResultItems[i];
+                resultSlot.CreateItem(recipeResultItems[i]);
+            }
+        }
+
     }
 
     public void OnMouseDownItem(ItemSlot itemSlot)
@@ -91,6 +140,19 @@ public class CraftingManager : MonoBehaviour
             {
                 itemImage[j].gameObject.SetActive(true);
                 itemImage[j].sprite = items[i].itemIcon;
+            }
+        }
+    }
+
+    void UpdateRecipeItems(Item item)
+    {
+        foreach(ItemSlot slot in craftingSlots)
+        {
+            if (craftingSlots == null)
+            {
+                recipeItems.Add(item);
+                recipeItems[itemCount] = item;
+                itemCount += 1;
             }
         }
     }
